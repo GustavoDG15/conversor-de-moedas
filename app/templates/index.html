@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coversor de Moeda</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas para R$</h1>
+        <form action="/converter" method="POST">
+            <select name="moeda" required>
+                <option selected disabled value="">Escolha uma moeda</option>
+                <option value="dolar">Dólar</option>
+                <option value="euro">Euro</option>
+                <option value="bitcoin">Bitcoin</option>
+            </select>
+
+            <input name="valor" type="number" step="0.01" min="0" placeholder="Digite o valor" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <h2>R${{conversao}}</h2>
+
+    </div>
+
+</body>
+</html>
